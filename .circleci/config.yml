@@ -9,13 +9,13 @@ jobs:
           command: git clone https://bitbucket.org/devops_sysops/pingdom-provider.git
       - run:
           name: Dodnload SonarQube
-          command: curl --insecure -OL https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-2.6.zip
+          command: curl --insecure -OL https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.2.0.1227-linux.zip
       - run:
           name: Unzip SonarQube
-          command: unzip sonar-scanner-2.6.zip
+          command: unzip sonar-scanner-cli-3.2.0.1227-linux.zip
       - run:
           name: Run SonarQube analyze
-          command: ./sonar-scanner-2.6/bin/sonar-scanner -Dsonar.projectKey=PINGTERRA -Dsonar.organization=$ORG -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN
+          command: ./sonar-scanner-3.2.0.1227-linux/bin/sonar-scanner -Dsonar.projectKey=PINGTERRA -Dsonar.organization=$ORG -Dsonar.sources=. -Dsonar.cfamily.build-wrapper-output.bypass=true -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN
 workflows:
   version: 2
   test:
