@@ -28,7 +28,7 @@ You will need to install the binary as a [terraform third party plugin](https://
 ln -s ~/go/bin/pingdom-provider ~/.terraform.d/plugins/$(uname | tr '[:upper:]' '[:lower:]')_amd64/terraform-provider-pingdom_v$(date +%Y.%m.%d)
 ```
 
-Updates can now be applied by re-running `go get bitbucket.org/devops_sysops/pingdom-provider`.
+Updates can now be applied by re-running `go get github.com/spy86/terraform-pingdom-provider`.
 
 ## Usage ##
 
